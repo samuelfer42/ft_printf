@@ -6,13 +6,13 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 15:34:54 by safernan          #+#    #+#             */
-/*   Updated: 2020/01/18 15:35:37 by safernan         ###   ########.fr       */
+/*   Updated: 2020/01/29 17:25:05 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int		ft_putchar_and_add(char c, int *i, int *len)
+static int		affiche_et_ajoute(char c, int *i, int *len)
 {
 	write(1, &c, 1);
 	(*i)++;
@@ -35,7 +35,7 @@ int				ft_printf(const char *s, ...)
 	while (s[i])
 	{
 		if (s[i] != '%')
-			ft_putchar_and_add(s[i], &i, &len);
+			affiche_et_ajoute(s[i], &i, &len);
 		if (s[i] == '%')
 		{
 			if ((ret = ft_printarg(s, &i, ap)) == -1)

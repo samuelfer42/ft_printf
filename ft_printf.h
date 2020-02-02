@@ -6,7 +6,7 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 15:35:16 by safernan          #+#    #+#             */
-/*   Updated: 2020/01/18 15:35:17 by safernan         ###   ########.fr       */
+/*   Updated: 2020/01/29 17:48:43 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,24 @@
 
 typedef struct	s_arg
 {
-	int			minus;
+	int			moins;
 	int			zero;
-	int			min_width;
-	int			prec;
-	int			length;
-	int			s_length;
+	int			largeur_min;
+	int			precision;
+	int			longueur;
+	int			s_longueur;
 	char		type;
 }				t_arg;
 
-int				ft_print_s(t_arg *arg, va_list ap);
-int				ft_print_p(t_arg *arg, va_list ap);
-int				ft_print_di(t_arg *arg, va_list ap);
-int				ft_print_u(t_arg *arg, va_list ap);
-int				ft_print_x(t_arg *arg, va_list ap);
-int				ft_print_xx(t_arg *arg, va_list ap);
+int				aff_s(t_arg *arg, va_list ap);
+int				aff_p(t_arg *arg, va_list ap);
+int				aff_di(t_arg *arg, va_list ap);
+int				aff_u(t_arg *arg, va_list ap);
+int				aff_x(t_arg *arg, va_list ap);
+int				aff_xx(t_arg *arg, va_list ap);
 int				ft_printf(const char *s, ...);
 int				ft_atoi(const char *s);
 int				ft_itoa_base(char *base, unsigned long nb, char **line);
 int				ft_printarg(const char *s, int *i, va_list ap);
-int				ft_fill_struct(const char *s, t_arg *arg, va_list ap);
+int				remplir_stucture(const char *s, t_arg *arg, va_list ap);
 #endif

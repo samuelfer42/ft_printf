@@ -6,7 +6,7 @@
 #    By: safernan <safernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 17:15:04 by safernan          #+#    #+#              #
-#    Updated: 2020/01/18 15:38:20 by safernan         ###   ########.fr        #
+#    Updated: 2020/01/29 17:52:00 by safernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,15 @@ CFLAGS = -c -Wall -Wextra -Werror
 
 SRC = ft_printf.c			\
 		ft_itoa_base.c		\
-		ft_fill_struct.c	\
+		remplir_structure.c	\
 		ft_printarg.c 		\
-		ft_utils.c			\
-		ft_print_d.c		\
-		ft_print_s.c		\
-		ft_print_p.c		\
-		ft_print_u.c		\
-		ft_print_x.c		\
-		ft_print_xx.c		\
+		atoi.c				\
+		aff_d.c		\
+		aff_s.c				\
+		aff_p.c				\
+		aff_u.c				\
+		aff_x.c				\
+		aff_xx.c			\
 
 OBJ = $(SRC:.c=.o)
 
