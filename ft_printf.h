@@ -6,7 +6,7 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 15:35:16 by safernan          #+#    #+#             */
-/*   Updated: 2020/01/29 17:48:43 by safernan         ###   ########.fr       */
+/*   Updated: 2020/02/02 17:12:57 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct	s_arg
 	int			precision;
 	int			longueur;
 	int			s_longueur;
-	char		type;
+	char		format;
 }				t_arg;
 
 int				aff_s(t_arg *arg, va_list ap);

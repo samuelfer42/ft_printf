@@ -6,7 +6,7 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 15:34:54 by safernan          #+#    #+#             */
-/*   Updated: 2020/01/29 17:25:05 by safernan         ###   ########.fr       */
+/*   Updated: 2020/02/05 20:24:57 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ int				ft_printf(const char *s, ...)
 	len = 0;
 	while (s[i])
 	{
-		if (s[i] != '%')
-			affiche_et_ajoute(s[i], &i, &len);
 		if (s[i] == '%')
 		{
-			if ((ret = ft_printarg(s, &i, ap)) == -1)
+			if ((ret = verif_arg(s, &i, ap)) == -1)
 				return (-1);
 			len += ret;
 		}
+		if (s[i] != '%')
+			affiche_et_ajoute(s[i], &i, &len);
 	}
 	va_end(ap);
 	return (len);

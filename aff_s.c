@@ -22,12 +22,12 @@ static int	ft_strlen(char *s)
 	return (i);
 }
 
-static int	ft_blank(char c, t_arg *arg, char *ctnt)
+static int	ft_blank(char c, t_arg *arg, char *str)
 {
 	int		i;
 	int		len;
 
-	len = ft_strlen(ctnt);
+	len = ft_strlen(str);
 	if (arg->precision == 1 && arg->longueur >= 0 && len > arg->longueur)
 		len = arg->longueur;
 	if (arg->largeur_min == -1 || len >= arg->largeur_min)
@@ -41,26 +41,26 @@ static int	ft_blank(char c, t_arg *arg, char *ctnt)
 	return (i);
 }
 
-static int	ft_put(t_arg *arg, char *ctnt)
+static int	ft_put(t_arg *arg, char *str)
 {
 	int		i;
 
 	i = 0;
 	if (arg->precision == 1 && arg->longueur == 0)
 		return (0);
-	while (ctnt[i])
+	while (str[i])
 	{
 		if (arg->precision == 1 && arg->longueur >= 0 && i == arg->longueur)
 			break ;
 		i++;
 	}
-	write(1, ctnt, i);
+	write(1, str, i);
 	return (i);
 }
 
 int			aff_s(t_arg *arg, va_list ap)
 {
-	char	*ctnt;
+	char	*str;
 	char	c;
 
 	c = ' ';
@@ -68,11 +68,11 @@ int			aff_s(t_arg *arg, va_list ap)
 		c = '0';
 	if (arg->s_longueur == 1)
 		arg->longueur = va_arg(ap, int);
-	if (!(ctnt = va_arg(ap, char*)))
-		ctnt = "(null)";
+	if (!(str = va_arg(ap, char*)))
+		str = "(null)";
 	if (arg->precision == 1 && arg->longueur == 0)
-		ctnt = "";
+		str = "";
 	if (arg->moins == 1)
-		return (ft_put(arg, ctnt) + ft_blank(c, arg, ctnt));
-	return (ft_blank(c, arg, ctnt) + ft_put(arg, ctnt));
+		return (ft_put(arg, str) + ft_blank(c, arg, str));
+	return (ft_blank(c, arg, str) + ft_put(arg, str));
 }

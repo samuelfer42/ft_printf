@@ -6,7 +6,7 @@
 #    By: safernan <safernan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 17:15:04 by safernan          #+#    #+#              #
-#    Updated: 2020/01/29 17:52:00 by safernan         ###   ########.fr        #
+#    Updated: 2020/02/05 20:24:49 by safernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -c -Wall -Wextra -Werror
 SRC = ft_printf.c			\
 		ft_itoa_base.c		\
 		remplir_structure.c	\
-		ft_printarg.c 		\
+		verif_arg.c 		\
 		atoi.c				\
 		aff_d.c		\
 		aff_s.c				\

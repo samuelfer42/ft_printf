@@ -29,7 +29,7 @@ static int		remplir_flags(const char *s, t_arg *arg)
 	i = 1;
 	arg->moins = 0;
 	arg->zero = 0;
-	while (cherche_caractere(s[i], "-0+#"))
+	while (cherche_caractere(s[i], "-0"))
 	{
 		if (s[i] == '-')
 			arg->moins = 1;
@@ -102,7 +102,7 @@ int				remplir_stucture(const char *s, t_arg *arg, va_list ap)
 		arg->zero = 0;
 	if (cherche_caractere(s[i], "cspdiuxX%"))
 	{
-		arg->type = s[i];
+		arg->format = s[i];
 		if (arg->zero && arg->precision && arg->longueur >= 0
 			&& cherche_caractere(s[i], "spdiuxX"))
 			arg->zero = 0;
