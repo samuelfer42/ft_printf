@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/24 16:02:35 by safernan          #+#    #+#             */
-/*   Updated: 2021/01/24 16:20:26 by safernan         ###   ########.fr       */
+/*   Created: 2021/01/25 18:03:23 by safernan          #+#    #+#             */
+/*   Updated: 2021/01/25 18:08:31 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "ft_printf.h"
 
@@ -44,20 +42,20 @@ static int		remplir_flags(const char *s, t_arg *arg)
 
 static int		remplir_largeur(const char *s, t_arg *arg, int i, va_list ap)
 {
-	arg->largeur_min = -1;
+	arg->larg_min = -1;
 	if (s[i] == '*')
 	{
-		arg->largeur_min = va_arg(ap, int);
-		if (arg->largeur_min < 0)
+		arg->larg_min = va_arg(ap, int);
+		if (arg->larg_min < 0)
 		{
-			arg->largeur_min = -arg->largeur_min;
+			arg->larg_min = -arg->larg_min;
 			arg->moins = 1;
 		}
 		i++;
 	}
 	else if (cherche_caractere(s[i], "0123456789"))
 	{
-		arg->largeur_min = ft_atoi(s + i);
+		arg->larg_min = ft_atoi(s + i);
 		while (cherche_caractere(s[i], "0123456789"))
 			i++;
 	}
@@ -83,7 +81,7 @@ static int		remplir_precision(const char *s, t_arg *arg, int i, va_list ap)
 			arg->longeur = ft_atoi(s + i);
 			while (cherche_caractere(s[i], "-0123456789"))
 				i++;
-			arg->largeur_min = (arg->longeur < 0) ? -arg->longeur : arg->largeur_min;
+			arg->larg_min = (arg->longeur < 0) ? -arg->longeur : arg->larg_min;
 			arg->moins = (arg->longeur < 0) ? 1 : arg->moins;
 			arg->longeur = (arg->longeur < 0) ? 0 : arg->longeur;
 		}

@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_x.c                                       :+:      :+:    :+:   */
+/*   aff_x.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/24 16:02:12 by safernan          #+#    #+#             */
-/*   Updated: 2021/01/24 16:02:55 by safernan         ###   ########.fr       */
+/*   Created: 2021/01/25 18:05:00 by safernan          #+#    #+#             */
+/*   Updated: 2021/01/25 18:08:27 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "ft_printf.h"
 
@@ -100,9 +98,9 @@ int			aff_x(t_arg *arg, va_list ap)
 	{
 		write(1, line, ret);
 		free(line);
-		return (ret + blank(arg, arg->largeur_min - ret));
+		return (ret + blank(arg, arg->larg_min - ret));
 	}
-	sp = blank(arg, arg->largeur_min - ret);
+	sp = blank(arg, arg->larg_min - ret);
 	write(1, line, ret);
 	free(line);
 	return (ret + sp);

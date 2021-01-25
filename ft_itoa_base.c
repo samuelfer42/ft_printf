@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/24 16:02:31 by safernan          #+#    #+#             */
-/*   Updated: 2021/01/24 16:03:07 by safernan         ###   ########.fr       */
+/*   Created: 2021/01/25 18:04:35 by safernan          #+#    #+#             */
+/*   Updated: 2021/01/25 18:04:38 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "ft_printf.h"
 
 static int	ft_strlen(char *s)
 {

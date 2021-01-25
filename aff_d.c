@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/24 16:02:27 by safernan          #+#    #+#             */
-/*   Updated: 2021/01/24 16:33:11 by safernan         ###   ########.fr       */
+/*   Created: 2021/01/25 18:07:16 by safernan          #+#    #+#             */
+/*   Updated: 2021/01/25 18:08:27 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "ft_printf.h"
 
@@ -50,8 +48,8 @@ static int	taille(int nb, t_arg *arg)
 	if (arg->precision == 1 && arg->longeur > i)
 		i = arg->longeur;
 	i += (nb < 0);
-	if (arg->zero == 1 && arg->largeur_min > i)
-		i = arg->largeur_min;
+	if (arg->zero == 1 && arg->larg_min > i)
+		i = arg->larg_min;
 	return (i);
 }
 
@@ -117,9 +115,9 @@ int			aff_di(t_arg *arg, va_list ap)
 	{
 		write(1, line, ret);
 		free(line);
-		return (ret + blank(arg, arg->largeur_min - ret));
+		return (ret + blank(arg, arg->larg_min - ret));
 	}
-	sp = blank(arg, arg->largeur_min - ret);
+	sp = blank(arg, arg->larg_min - ret);
 	write(1, line, ret);
 	free(line);
 	return (ret + sp);

@@ -6,11 +6,9 @@
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 16:01:52 by safernan          #+#    #+#             */
-/*   Updated: 2021/01/24 16:15:55 by safernan         ###   ########.fr       */
+/*   Updated: 2021/01/25 18:08:27 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
@@ -23,7 +21,7 @@ typedef struct	s_arg
 {
 	int			moins;
 	int			zero;
-	int			largeur_min;
+	int			larg_min;
 	int			precision;
 	int			longeur;
 	int			s_longeur;

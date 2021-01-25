@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_s.c                                       :+:      :+:    :+:   */
+/*   aff_s.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/24 16:02:20 by safernan          #+#    #+#             */
-/*   Updated: 2021/01/24 16:02:57 by safernan         ###   ########.fr       */
+/*   Created: 2021/01/25 18:07:04 by safernan          #+#    #+#             */
+/*   Updated: 2021/01/25 18:08:27 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "ft_printf.h"
 
@@ -32,10 +30,10 @@ static int	blank(char c, t_arg *arg, char *ctnt)
 	len = ft_strlen(ctnt);
 	if (arg->precision == 1 && arg->longeur >= 0 && len > arg->longeur)
 		len = arg->longeur;
-	if (arg->largeur_min == -1 || len >= arg->largeur_min)
+	if (arg->larg_min == -1 || len >= arg->larg_min)
 		return (0);
 	i = 0;
-	while (i + len < arg->largeur_min)
+	while (i + len < arg->larg_min)
 	{
 		write(1, &c, 1);
 		i++;

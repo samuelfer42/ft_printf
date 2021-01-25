@@ -1,16 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verif_arg.c                                      :+:      :+:    :+:   */
+/*   verif_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: safernan <safernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/24 16:02:03 by safernan          #+#    #+#             */
-/*   Updated: 2021/01/24 16:06:31 by safernan         ###   ########.fr       */
+/*   Created: 2021/01/25 18:03:55 by safernan          #+#    #+#             */
+/*   Updated: 2021/01/25 18:08:27 by safernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "ft_printf.h"
 
@@ -39,10 +37,10 @@ static int	aff_mod(t_arg *arg)
 
 	c = ' ';
 	if (arg->moins == 1)
-		return (ft_putchar('%') + blank(c, arg->largeur_min - 1));
+		return (ft_putchar('%') + blank(c, arg->larg_min - 1));
 	if (arg->zero == 1)
 		c = '0';
-	return (blank(c, arg->largeur_min - 1) + ft_putchar('%'));
+	return (blank(c, arg->larg_min - 1) + ft_putchar('%'));
 }
 
 static int	aff_c(t_arg *arg, va_list ap)
@@ -53,10 +51,10 @@ static int	aff_c(t_arg *arg, va_list ap)
 	c = ' ';
 	ch = va_arg(ap, int);
 	if (arg->moins == 1)
-		return (ft_putchar(ch) + blank(c, arg->largeur_min - 1));
+		return (ft_putchar(ch) + blank(c, arg->larg_min - 1));
 	if (arg->zero == 1)
 		c = '0';
-	return (blank(c, arg->largeur_min - 1) + ft_putchar(ch));
+	return (blank(c, arg->larg_min - 1) + ft_putchar(ch));
 }
 
 int			verif_arg(const char *s, int *i, va_list ap)
